@@ -21,7 +21,7 @@ end
 if not WS_URL then error'Set the required global variables.' end
 local socket
 if syn_checkcaller then
-	socket = syn.websocket.connect(WS_URL)
+	socket = WebsocketClient.new(WS_URL)
 elseif PROTOSMASHER_LOADED then
 	socket = WebSocket.new(WS_URL)
 	socket:ConnectToServer()
